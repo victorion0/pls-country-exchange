@@ -1,0 +1,46 @@
+{
+  "info": {
+    "_postman_id": "pls-country-exchange-collection",
+    "name": "PLS Country Exchange - Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST /countries/refresh",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": "{{baseUrl}}/countries/refresh"
+      }
+    },
+    {
+      "name": "GET /status",
+      "request": { "method": "GET", "url": "{{baseUrl}}/status" }
+    },
+    {
+      "name": "GET /countries",
+      "request": { "method": "GET", "url": "{{baseUrl}}/countries" }
+    },
+    {
+      "name": "GET /countries (region)",
+      "request": { "method": "GET", "url": "{{baseUrl}}/countries?region=Africa" }
+    },
+    {
+      "name": "GET /countries (currency)",
+      "request": { "method": "GET", "url": "{{baseUrl}}/countries?currency=NGN" }
+    },
+    {
+      "name": "GET /countries (sort)",
+      "request": { "method": "GET", "url": "{{baseUrl}}/countries?sort=gdp_desc" }
+    },
+    {
+      "name": "GET /countries/:name",
+      "request": { "method": "GET", "url": "{{baseUrl}}/countries/Nigeria" }
+    },
+    {
+      "name": "GET /countries/image",
+      "request": { "method": "GET", "url": "{{baseUrl}}/countries/image" }
+    }
+  ],
+  "event": []
+}
