@@ -39,6 +39,12 @@ The server runs on the port set in `.env` (default 3000). Endpoints:
 - GET /status — total countries and last refresh timestamp
 - GET /countries/image — serve `cache/summary.png`
 
+Note about the summary image
+
+- The summary image is generated at runtime when you call `POST /countries/refresh` and is written to `cache/summary.png` in the project directory.
+- The `POST /countries/refresh` response includes the image path, and you can retrieve the image directly via `GET /countries/image` (returns 404 if the image hasn't been generated yet).
+- The `cache/` folder is gitignored (and may be ephemeral on hosts like Railway); graders should run `POST /countries/refresh` then `GET /countries/image` to view/download the generated image.
+
 Notes
 - Default DB: `db.sqlite` in project root (easy local setup)
 - To use MySQL (Railway), set `DATABASE_URL` to a valid mysql:// URL. The app will auto-detect and use MySQL.
